@@ -33,27 +33,32 @@ const Account = () => {
 
   return (
     <>
-      <button
-        onClick={() => {
-          setIsDeposit(true);
-        }}
-      >
-        Deposit
-      </button>
-      <button
-        onClick={() => {
-          setIsDeposit(false);
-        }}
-      >
-        Withdrawal
-      </button>
-      <form onSubmit={handleSubmit}>
-        <h2>Account Balance ${accountBal}</h2>
-        <ATMDeposit onChange={handleChange} isDeposit={isDeposit}>
-          {" "}
-          Deposit
-        </ATMDeposit>
-      </form>
+      <figure className="position-relative">
+        <img src="./atm-clipart.png" />
+        <figcaption>
+          <button
+            onClick={() => {
+              setIsDeposit(true);
+            }}
+          >
+            Deposit
+          </button>
+          <button
+            onClick={() => {
+              setIsDeposit(false);
+            }}
+          >
+            Withdrawal
+          </button>
+          <form onSubmit={handleSubmit}>
+            <h2>Account Balance ${accountBal}</h2>
+            <ATMDeposit onChange={handleChange} isDeposit={isDeposit}>
+              {" "}
+              Deposit
+            </ATMDeposit>
+          </form>
+        </figcaption>
+      </figure>
     </>
   );
 };
